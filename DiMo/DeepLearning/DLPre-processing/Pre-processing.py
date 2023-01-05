@@ -124,32 +124,32 @@ for d in DataMotifsTest:
 # // Save result to files
 import csv
 
-with open('OutputWeight_train4.csv', 'w', newline='') as csv_file:
+with open('OutputWeight_train.csv', 'w', newline='') as csv_file:
     for p in outputDataMotif:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(p)
 
-with open('outputWeight_test4.csv', 'w', newline='') as csv_file:
+with open('OutputWeight_test.csv', 'w', newline='') as csv_file:
     for p in outputDataMotifTEST:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(p)
 
-with open('Outputx_train4.csv', 'w', newline='') as csv_file:
+with open('OutputX_train.csv', 'w', newline='') as csv_file:
     for p in DataMotifsTrain:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(p)
 
-with open('outputx_test4.csv', 'w', newline='') as csv_file:
+with open('OutputX_test.csv', 'w', newline='') as csv_file:
     for p in DataMotifsTest:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(p)
 
-with open('Outputy_train4.csv', 'w', newline='') as csv_file:
+with open('OutputY_train.csv', 'w', newline='') as csv_file:
     for p in ytrain:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(str(p))
 
-with open('outputy_test4.csv', 'w', newline='') as csv_file:
+with open('OutputY_test.csv', 'w', newline='') as csv_file:
     for p in ytest:
         csv_writer = csv.writer(csv_file, delimiter=',')
         csv_writer.writerow(str(p))
