@@ -1,4 +1,4 @@
-#########################################################FUNCTIONS####################
+##############################FUNCTIONS####################
 def listToString(s):
     # initialize an empty string
     str1 = ""
@@ -37,3 +37,38 @@ def binomial(val):
     x = abs(int(val))
     b = 0.03125 * (x * x) + (1.25 * x)
     return b
+
+# /// Test and Calculate Binomial Functions of Weights
+from numpy import arange
+from scipy.optimize import curve_fit
+from matplotlib import pyplot
+
+
+# // define the true objective function
+def objective(x, a, b, c):
+    return a * x + b * x ** 2 + c
+
+
+# load the dataset
+x = [26, 23, 15, 7, 0]
+y = [100, 98, 90, 60, 0]
+# curve fit
+popt, _ = curve_fit(objective, x, y)
+
+# // summarize the parameter values
+a, b, c = popt
+print('y = %.5f * x + %.5f * x^2 + %.5f' % (a, b, c))
+
+# // plot input vs output
+pyplot.scatter(x, y)
+
+# // define a sequence of inputs between the smallest and largest known inputs
+x_line = arange(min(x), max(x), 1)
+
+# // calculate the output for the range
+y_line = objective(x_line, a, b, c)
+
+# // create a line plot for the mapping function
+pyplot.plot(x_line, y_line, '--', color='red')
+pyplot.show()
+
