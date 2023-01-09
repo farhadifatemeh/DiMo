@@ -38,7 +38,7 @@ def binomial(val):
     b = 0.03125 * (x * x) + (1.25 * x)
     return b
 
-# /// Test and Calculate Binomial Functions of Weights
+# /// Test and Calculate Binomial Functions of Weights by Curve
 from numpy import arange
 from scipy.optimize import curve_fit
 from matplotlib import pyplot
